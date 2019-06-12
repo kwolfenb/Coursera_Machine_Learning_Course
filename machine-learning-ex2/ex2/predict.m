@@ -15,9 +15,11 @@ p = zeros(m, 1);
 %               You should set p to a vector of 0's and 1's
 %
 
+%	Using the calculated theta, calculate the probabilities for each row of X 
+p = sigmoid(X*theta);
 
-
-
+%	Round values to 0 or 1 
+p = round(p);
 
 
 
