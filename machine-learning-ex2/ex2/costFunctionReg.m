@@ -29,9 +29,13 @@ J = J + (lambda/(2*m) * sum(theta(2:length(theta)) .^2));
 
 
 %	regularizing gradient. theta(0) does not get regularized 
-for i=2:length(theta),
-	grad(i) = grad(i) + (lambda/m)*theta(i);
-end;
+%	vectorized
+grad(2:length(grad)) = grad(2:length(grad)) .+ (lambda/m)*theta(2:length(theta));
+
+%	non-vectorized
+%for i=2:length(theta),
+%	grad(i) = grad(i) + (lambda/m)*theta(i);
+%end;
 
  
 

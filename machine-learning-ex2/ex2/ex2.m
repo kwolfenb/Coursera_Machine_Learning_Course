@@ -83,7 +83,7 @@ fprintf('Expected gradients (approx):\n 0.043\n 2.566\n 2.647\n');
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
-input('press enter')
+
 
 %% ============= Part 3: Optimizing using fminunc  =============
 %  In this exercise, you will use a built-in function (fminunc) to find the
@@ -91,6 +91,8 @@ input('press enter')
 
 %  Set options for fminunc
 options = optimset('GradObj', 'on', 'MaxIter', 400);
+%	sets GradObj on which tells fminunc that our function returns both the cost and the gradient
+% 	Sets MaxIter so that fminunc will run for a max number of steps before it terminates
 
 %  Run fminunc to obtain the optimal theta
 %  This function will return theta and the cost 
